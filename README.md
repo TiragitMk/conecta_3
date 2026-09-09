@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-# conecta_3
-Pequeño juego conecta_3 en un tablero 4x4, desarrollado en Python y con gameloop en la terminal.
-=======
 # Conecta 4 (o conecta 3)
 
 3 en raya en un tablero 4x4, con múltiples niveles de dificultad y oponentes que aprenden de las jugadas.
@@ -48,8 +44,9 @@ El juego al completo transcurre en la terminal con comandos escritos. Se darán 
 - `0`, `1`, `2`... - Escoger opción.
 - `Enter` - Ingresar comando.
 
-Una vez se ha comenzado el game loop, no se puede parar hasta que acabe la partida. Se debe parar manualmente con `ctrl`+`c` en la terminal.
-Ingresar comandos u opciones no contemplados entre las alternativas dispuestas no dará resultado.
+Una vez se ha comenzado el game loop, no se puede parar hasta que acabe la partida. Si 
+se quiere parar el juego en medio de partida, se debe parar manualmente pulsando `ctrl`+`c` en la terminal.
+Ingresar comandos u opciones no contempladas entre las alternativas dispuestas no dará resultado alguno.
 
 **_Cosas a tener en cuenta:_**
 
@@ -66,4 +63,4 @@ El único fichero que contiene funciones puras es `list_utils.py`. El resto de f
 que se encuentran en el propio código fuente y cuyo uso se extiende a lo largo de todo el proyecto.
 
 También se puede encontrar un directorio `tests/` en el que se encuentran diversos tests de desarrollo, para usar `pytest`.
->>>>>>> 4815b37 (Juego funcional, sin comentar, con README casi completo.)
+ 
