@@ -5,19 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e210c430-1faf-41c2-96a2-3872248e3e3d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/conecta-4@1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/conecta-4@1.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cuestionario_conecta4.docx" beforeDir="false" afterPath="$PROJECT_DIR$/cuestionario_conecta4.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/conecta_4/conecta4.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/conecta_4/conecta4.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/conecta_4/game.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/conecta_4/game.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/conecta_4/linear_board.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/conecta_4/linear_board.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/conecta_4/list_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/conecta_4/list_utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/conecta_4/match.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/conecta_4/match.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/conecta_4/move.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/conecta_4/move.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/conecta_4/oracle.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/conecta_4/oracle.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/conecta_4/player.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/conecta_4/player.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/conecta_4/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/conecta_4/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/conecta_4/square_board.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/conecta_4/square_board.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,7 +103,8 @@
       <workItem from="1788952484136" duration="4488000" />
       <workItem from="1788967473925" duration="10854000" />
       <workItem from="1788981073272" duration="67000" />
-      <workItem from="1789034516293" duration="3285000" />
+      <workItem from="1789034516293" duration="3362000" />
+      <workItem from="1789039948984" duration="1451000" />
     </task>
     <servers />
   </component>
