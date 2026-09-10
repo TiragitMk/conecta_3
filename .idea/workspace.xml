@@ -4,7 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e210c430-1faf-41c2-96a2-3872248e3e3d" name="Changes" comment="" />
+    <list default="true" id="e210c430-1faf-41c2-96a2-3872248e3e3d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/conecta-4@1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/conecta-4@1.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cuestionario_conecta4.docx" beforeDir="false" afterPath="$PROJECT_DIR$/cuestionario_conecta4.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/conecta_4/conecta4.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/conecta_4/conecta4.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/conecta_4/game.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/conecta_4/game.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/conecta_4/linear_board.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/conecta_4/linear_board.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/conecta_4/list_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/conecta_4/list_utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/conecta_4/match.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/conecta_4/match.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/conecta_4/move.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/conecta_4/move.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/conecta_4/oracle.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/conecta_4/oracle.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/conecta_4/player.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/conecta_4/player.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/conecta_4/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/conecta_4/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/conecta_4/square_board.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/conecta_4/square_board.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -29,21 +43,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/Daniel/Desktop/Bootcamp CERO/dia_5_2",
-    "node.js.detected.package.jshint": "true",
-    "node.js.selected.package.jshint": "",
-    "nodejs_package_manager_path": "npm"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Daniel/Desktop/Bootcamp CERO/dia_5_2&quot;,
+    &quot;node.js.detected.package.jshint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.jshint&quot;: &quot;&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Daniel\Desktop\Bootcamp CERO\dia_5_2" />
@@ -98,11 +112,24 @@
       <workItem from="1788880990945" duration="4544000" />
       <workItem from="1788903003650" duration="2510000" />
       <workItem from="1788952484136" duration="4488000" />
-      <workItem from="1788967473925" duration="1580000" />
+      <workItem from="1788967473925" duration="10854000" />
+      <workItem from="1788981073272" duration="67000" />
+      <workItem from="1789034516293" duration="3285000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/conecta_4/player.py</url>
+          <line>41</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

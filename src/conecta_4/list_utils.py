@@ -1,6 +1,8 @@
+# Funciones puras sobre listas y matrices.
+
 def find_n(elements, needle, n):
     """
-    Devuelve True si en elements hay n o más ocurrencias de needle
+    Devuelve True si en elements hay n o más ocurrencias de needle, no necesariamente consecutivas.
     :param elements: list
     :param needle: int
     :param n: int
@@ -18,11 +20,15 @@ def find_n(elements, needle, n):
         return False
 
 def find_one(elements, needle):
+    """
+    find_n para buscar una sola ocurrencia. Igual, pero n=1 constante.
+    """
     return find_n(elements, needle, 1)
 
 def find_strike(elements, needle, n):
     """
-
+    Devuelve True si hay n ocurrencias consecutivas (streak) de needle.
+    Es la función que decide si hay victoria.
     :param elements:
     :param needle:
     :param n:
@@ -31,21 +37,24 @@ def find_strike(elements, needle, n):
     if n >= 0:
         index = 0
         count = 0
-        #strike = False
         while count < n and index < len(elements):
             if needle == elements[index]:
-                #strike = True
                 count += 1
             else:
-                #strike = False
                 count = 0
             index += 1
-        return count >= n #and strike
+        return count >= n
     else:
         return False
 
 def make_list(length, filler):
-
+    """
+    Crea una lista de longitud length repitiendo filler.
+    Actualmente se usa con None, si el objeto fuera mutable podrían compartir objeto (aliasing).
+    :param length: int
+    :param filler:
+    :return: list
+    """
     result = []
     index = 0
     while index < length:
@@ -54,6 +63,12 @@ def make_list(length, filler):
     return result
 
 def index_first_element(elements, needle):
+    """
+    Devuelve el índice de la primera aparición de needle, o None si no está.
+    :param elements: list
+    :param needle:
+    :return: int o None
+    """
     index = 0
     while index < len(elements):
         if needle == elements[index]:
@@ -65,9 +80,9 @@ def index_first_element(elements, needle):
 def map_list(elements, transform):
     """
     Creo una lista nueva aplicando transform a cada elemento
-    :param elements:
-    :param transform:
-    :return:
+    :param elements: list
+    :param transform: function
+    :return: list
     """
     result = []
     for element in elements:
@@ -76,10 +91,12 @@ def map_list(elements, transform):
 
 def make_list_from_factory(length, factory):
     """
-    Crea una lista de listas que son fabricadas por mi fábrica que es LinearBoard
-    :param length:
-    :param factory:
-    :return:
+    Crea una lista llamando a factory() una vez por posición.
+    Se diferencia de make_list en que aquí cada elemento es un objeto NUEVO,
+    que es lo que hace falta para las columnas del tablero.
+    :param length: int
+    :param factory: function
+    :return: list
     """
     result = []
     index = 0
@@ -91,6 +108,10 @@ def make_list_from_factory(length, factory):
 def transpose(matrix):
     """
     Intercambia filas y columnas. Funciona con matrices no cuadradas.
+    Convierte el problema de "victoria horizontal" en uno vertical.
+    Devuelve listas nuevas.
+    :param matrix: list
+    :return: list
     """
     if not matrix:
         return []
@@ -104,6 +125,14 @@ def transpose(matrix):
     return result
 
 def displace(l, distancia, filler = None):
+    """
+    Desplaza los elementos de una lista, rellenando los huecos con filler.
+    Lo que se sale por los extremos se pierde. La longitud no cambia.
+    :param l: list
+    :param distancia: int
+    :param filler:
+    :return: list
+    """
     n = len(l)
     result = []
     for i in range(n):
@@ -115,15 +144,31 @@ def displace(l, distancia, filler = None):
     return result
 
 def displace_matrix(matrix, filler = None):
+    """
+    Desplaza cada columna i una cantidad i-1.
+    Las diagonales descendentes pasan a ser filas, por lo que se pueden buscar como victorias horizontales.
+    :param matrix: list
+    :param filler:
+    :return: list
+    """
     d = []
     for i in range(len(matrix)):
         d.append(displace(matrix[i], i - 1, filler))
     return d
 
 def reverse_list(elements):
+    """
+    Se usa en reverse_matrix.
+    :param elements: list
+    :return: list
+    """
     return elements[::-1]
 
 def reverse_matrix(matrix):
+    """
+    Invierte la matriz. Se usa para: convertir diagonales ascendentes en descendentes,
+    y poner el tablero derecho antes de imprimirlo.
+    """
     result = []
     for col in matrix:
         result.append(reverse_list(col))
@@ -131,7 +176,10 @@ def reverse_matrix(matrix):
 
 def all_the_same_score(elements):
     """
-    No controla lista vacía. De momento no pasa nada.
+    Devuelve True si todos los elementos son iguales entre sí, o sea misma clasificación según __eq__.
+    No controla lista vacía.
+    :param elements: list
+    :return: bool
     """
     if not elements:
         return True
@@ -143,12 +191,29 @@ def all_the_same_score(elements):
     return result
 
 def colpase_matrix(matrix, empty = '.', sep = '|'):
+    """
+    Convierte la matriz del tablero en una sola cadena siguiendo un molde.
+    Cada columna se separa con sep, las celdas vacías son empty.
+    Es importante conservar estos valores predeterminados, otras funciones usan los mismos.
+    Podrían convertirse en una constante.
+    :param matrix: list
+    :param empty: "."
+    :param sep: "|"
+    :return: str
+    """
     result = ''
     for elt in matrix:
         result = result + sep + colapse_list(elt, empty)
     return result[1:]
 
 def colapse_list(elements, empty = '.'):
+    """
+    Convierte una columna en texto: None se escribe como '.' y las fichas
+    se escriben tal cual (x, o).
+    :param elements: list
+    :param empty: "."
+    :return: str
+    """
     result = ''
     for elt in elements:
         if elt is None:
@@ -158,18 +223,39 @@ def colapse_list(elements, empty = '.'):
     return result
 
 def explode_list(list_of_strings): #['x..o', 'oxoo']
+    """
+    Inversa de colapse_list: convierte cada cadena en lista de
+    caracteres. Primer paso para reconstruir un tablero desde su código.
+    :param list_of_strings: list
+    :return: list
+    """
     result = []
     for element in list_of_strings:
         result.append(list(element))
     return result
 
 def replace_all(matrix, old, new):
+    """
+    Sustituye un valor por otro en todas las filas de la matriz.
+    Se usa para cambiar los '.' del código por None.
+    :param matrix: list
+    :param old: str
+    :param new: str
+    :return: list
+    """
     new_matrix = []
     for element in matrix:
         new_matrix.append(replace_in_list(element, old, new))
     return new_matrix
 
 def replace_in_list(elements, old, new):
+    """
+    Devuelve una lista nueva con old sustituido por new. No modifica la original.
+    :param elements: list
+    :param old: str
+    :param new: str
+    :return: list
+    """
     result = []
     for elt in elements:
         if elt == old:
@@ -177,12 +263,3 @@ def replace_in_list(elements, old, new):
         else:
             result.append(elt)
     return result
-
-
-
-
-
-
-
-
-
