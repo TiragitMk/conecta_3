@@ -11,6 +11,8 @@ class LinearBoard:
         """
         Crea una columna LinearBoard a partir de una lista ya hecha.
         Se queda con la lista recibida, no hace copia.
+        :param data: lista de caracteres de la columna
+        :return: LinearBoard
         """
         board = cls()
         board._columns = data
@@ -35,6 +37,7 @@ class LinearBoard:
         """
         Devuelve la lista interna de casillas (no una copia): modificarla
         modifica la columna.
+        :return: lista de caracteres de la columna
         """
         return self._columns
 
@@ -44,6 +47,8 @@ class LinearBoard:
     def add(self, char):
         """
         Coloca una ficha en la primera casilla libre empezando por abajo (simula gravedad).
+        :param char: ficha del personaje que añade
+        :return: None
         """
         if not self.is_full():
             i = index_first_element(self._columns, None)
@@ -53,9 +58,16 @@ class LinearBoard:
     def is_victory(self, char):
         """
         True si hay VICTORY_STRIKE fichas consecutivas de char en la columna.
+        :param char: ficha del personaje que añade
         """
         return find_strike(self._columns, char, VICTORY_STRIKE)
 
     def is_tie(self, char_1, char_2):
+        """
+        Predicado que determina el empate.
+        :param char_1: Ficha del personaje 1
+        :param char_2: Ficha del personaje 2
+        :return: bool
+        """
         return ((self.is_victory(char_1) == False) and
                 (self.is_victory(char_2) == False))

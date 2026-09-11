@@ -27,7 +27,8 @@ class Game:
 
     def start_game(self):
         """
-        Secuencia completa: logo, configuración y bucle de partida.
+        Secuencia completa de logo, configuración y bucle de partida.
+        :return: None
         """
         self._print_logo()
         self._configuration()
@@ -40,6 +41,7 @@ class Game:
     def _configuration(self):
         """
         Configuración pedida al usuario.
+        :return: None
         """
         self.round_type = self._get_round_type()
         if self.round_type == RoundType.Human_vs_Computer:
@@ -50,6 +52,7 @@ class Game:
     def _get_round_type(self):
         """
         Usuario setea las opciones disponibles de rondas.
+        :return: RoundType
         """
         print("""
         Selecciona las opciones disponibles:
@@ -68,6 +71,7 @@ class Game:
     def _get_level(self):
         """
         Usuario setea las opciones disponibles de dificultad.
+        :return: Level
         """
         print("""
         Selecciona las opciones disponibles:
@@ -111,7 +115,7 @@ class Game:
     def _game_loop(self):
         """
         Hace el bucle de eventos.
-        :return:
+        :return: None
         """
         while True:
             jugador_actual = self.match.get_next_player
@@ -135,7 +139,7 @@ class Game:
         """
         Imprime el tablero pasándolo antes a una matriz.
         Se invierte cada columna de esta matriz para que la casilla más alta quede arriba.
-        :return:
+        :return: None
         """
         board_matrix = reverse_matrix(self.board.as_matrix())
         bt = BeautifulTable()
@@ -148,7 +152,7 @@ class Game:
     def _print_result(self):
         """
         Muestra quién ha ganado, o EMPATE si no hay ganador.
-        :return:
+        :return: None
         """
         ganador = self.match.get_winner(self.board)
         perdedor = self.match.get_loser(self.board)
@@ -162,16 +166,17 @@ class Game:
     def _print_move(self, player):
         """
         Muestra por pantalla la jugada de player.
+        Paréntesis de player.char movido a la izquierda respecto del ejemplo de Fernando.
         :param player:
-        :return:
+        :return: None
         """
-        print(f'{player.name} ({player.char} ha movido en {player.last_moves[0].position})')
+        print(f'{player.name} ({player.char}) ha movido en {player.last_moves[0].position}')
 
     def _winner_or_tie(self):
         """
         El juego termina y vemos si hay un empate o un ganador.
         Si hay ganador, aplica al perdedor _on_lose para que pueda aprender de la derrota (si puede).
-        :return: bool, True si la partida ha terminado
+        :return: bool
         """
         ganador = self. match.get_winner(self.board)
         if ganador is not None:

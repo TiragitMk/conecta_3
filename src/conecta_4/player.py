@@ -22,10 +22,16 @@ class Player:
     def opponent(self):
         """
         Rival de este player. Lo necesita SmartOracle para simular la respuesta del contrario.
+        :return: Player
         """
         return self._opponent
     @opponent.setter
     def opponent(self, other):
+        """
+        Settea el oponente.
+        :param other: El oponente
+        :return: None
+        """
         self._opponent = other
         if other is not None:
             other._opponent = self
@@ -137,5 +143,6 @@ class ReportingPlayer(Player):
         """
         Sobrescribe el hook pasando las jugadas de la partida al oráculo para
         que las reclasifique. Si el oráculo no sabe aprender, back_track tampoco hace nada.
+        :return: None
         """
         self._oracle.back_track(self.last_moves)

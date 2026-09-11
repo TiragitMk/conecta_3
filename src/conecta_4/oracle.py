@@ -48,6 +48,10 @@ class BaseOracle:
     def _get_columns_recommendations(self, board, i, player):
         """
         Evalúa una elección de columna en llena o posible.
+        :param board: SquareBoard a evaluar
+        :param player: jugador para el que se evalúa
+        :param i: indice
+        :return: lista con una ColumnRecommendations por columna
         """
         classification = ColumnClassification.MAYBE
         if board._columns[i].is_full():
@@ -74,11 +78,13 @@ class BaseOracle:
     def back_track(self, list_of_moves):
         """
         Hook para LearningOracle.back_track.
+        :param list_of_moves: list
         """
         pass
     def to_bad(self, move):
         """
         Igual que con back_track.
+        :param move: list
         """
         pass
 
@@ -90,6 +96,10 @@ class SmartOracle(BaseOracle):
     def _get_columns_recommendations(self, board, i, player):
         """
         Hereda de BaseOracle y si la columna es jugable, la mete a WIN o LOSE simulando la jugada.
+        :param board: SquareBoard
+        :param i: indice
+        :param player: jugador
+        :return: lista con una ColumnRecommendations por columna
         """
         recommendations = super()._get_columns_recommendations(board, i, player)
         if recommendations.classification == ColumnClassification.MAYBE:
@@ -102,6 +112,10 @@ class SmartOracle(BaseOracle):
     def _play_on_temporal_board(self, board, index, player):
         """
         Juega sobre una deepcopy.
+        :param board: SquareBoard
+        :param index: index
+        :param player: jugador
+        :return: SquareBoard
         """
         temporal_board = deepcopy(board)
         temporal_board.add(player.char, index)
@@ -111,6 +125,10 @@ class SmartOracle(BaseOracle):
     def _is_winning_bet(self, board, index, player):
         """
         True si jugar en index da la victoria inmediata al player. Simula tablero.
+        :param board: SquareBoard
+        :param index: index
+        :param player: jugador
+        :return: bool
         """
         temporal_bet = self._play_on_temporal_board(board, index, player)
         return temporal_bet.is_victory(player.char)
@@ -120,6 +138,10 @@ class SmartOracle(BaseOracle):
         """
         True si tras jugar en index el rival puede ganar en su turno
         siguiente en alguna columna. Simula tablero.
+        :param board: SquareBoard
+        :param index: index
+        :param player: jugador
+        :return: bool
         """
         temporal_bet = self._play_on_temporal_board(board, index, player)
         losing_bet = False
@@ -141,6 +163,9 @@ class MemoizationOracle(SmartOracle):
     def _make_key(self, board_code, player):
         """
         Construye la clave de la caché.
+        :param board_code: str
+        :param player: jugador
+        :return: key
         """
         return f'{board_code.str_board}@{player.char}' # x..o|xx.o|....@o
 
@@ -166,6 +191,8 @@ class LearningOracle(MemoizationOracle):
     def to_bad(self, move):
         """
         Marca como BAD la columna jugada en ese Move, reescribiendo la entrada correspondiente de la caché.
+        :param move: Move
+        :return: None
         """
         #Crear la clave
         key = self._make_key(move.board_code, move.player)

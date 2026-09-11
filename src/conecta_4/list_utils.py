@@ -22,13 +22,16 @@ def find_n(elements, needle, n):
 def find_one(elements, needle):
     """
     find_n para buscar una sola ocurrencia. Igual, pero n=1 constante.
+    :param elements: list
+    :param needle: int
+    :return: bool
     """
     return find_n(elements, needle, 1)
 
 def find_strike(elements, needle, n):
     """
     Devuelve True si hay n ocurrencias consecutivas (streak) de needle.
-    Es la función que decide si hay victoria.
+    Se usa después para decidir si hay victoria.
     :param elements:
     :param needle:
     :param n:
@@ -91,8 +94,8 @@ def map_list(elements, transform):
 
 def make_list_from_factory(length, factory):
     """
-    Crea una lista llamando a factory() una vez por posición.
-    Se diferencia de make_list en que aquí cada elemento es un objeto NUEVO,
+    Crea una lista de longitud length llamando a factory() una vez por posición.
+    Se diferencia de make_list en que aquí cada elemento es un objeto nuevo,
     que es lo que hace falta para las columnas del tablero.
     :param length: int
     :param factory: function
@@ -168,6 +171,8 @@ def reverse_matrix(matrix):
     """
     Invierte la matriz. Se usa para: convertir diagonales ascendentes en descendentes,
     y poner el tablero derecho antes de imprimirlo.
+    :param matrix: list
+    :return: list
     """
     result = []
     for col in matrix:

@@ -1,6 +1,7 @@
 # Conecta 4 (o conecta 3)
 
 3 en raya en un tablero 4x4, con múltiples niveles de dificultad y oponentes que aprenden de las jugadas.
+Cuestionario en la raíz del repositorio.
 
 ## Requisitos
 
@@ -63,4 +64,3 @@ El único fichero que contiene funciones puras es `list_utils.py`. El resto de f
 que se encuentran en el propio código fuente y cuyo uso se extiende a lo largo de todo el proyecto.
 
 También se puede encontrar un directorio `tests/` en el que se encuentran diversos tests de desarrollo, para usar `pytest`.
- 

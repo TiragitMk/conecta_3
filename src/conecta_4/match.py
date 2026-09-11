@@ -28,7 +28,7 @@ class Match:
     def get_player(self, char):
         """
         Mira la ficha del jugador.
-        :param char: 'x' u 'o'
+        :param char: ficha del personaje
         :return: jugador
         """
         return self._players[char]

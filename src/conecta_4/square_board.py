@@ -12,6 +12,8 @@ class SquareBoard:
         """
         Convierte a SquareBoard a partir de una matriz (LoL).
         Las listas recibidas no se copian, se reutilizan tal cual.
+        :param list_of_list: lista de listas para construir el SquareBoard.
+        :return: SquareBoard
         """
         board = cls()
         board._columns = map_list(list_of_list, LinearBoard.from_list)
@@ -34,6 +36,8 @@ class SquareBoard:
         """
         Construye desde un objeto BoardCode.
         Permite obtener una posición almacenada.
+        :param board_code: objeto BoardCode
+        :return: SquareBoard
         """
         return cls.from_str_board(board_code.str_board)
 
@@ -55,6 +59,7 @@ class SquareBoard:
     def is_full(self):
         """
         True si todas las columnas están llenas. Sirve para detectar empate.
+        :return: bool
         """
         result = True
         for linear_board in self._columns:
@@ -63,6 +68,9 @@ class SquareBoard:
     def add(self, char, column):
         """
         Coloca una ficha char en column, aprovechándose de LinearBoard.add.
+        :param char: ficha del personaje que añade
+        :param column: columna a la que se añade ficha
+        :return: None
         """
         result = self._columns[column].add(char)
         return result
@@ -71,6 +79,7 @@ class SquareBoard:
         Devuelve el tablero como matriz (LoL).
         Son las listas internas, no copias. Construir otro tablero con
         esta matriz haría que ambos compartieran memoria (aliasing).
+        :return: list
         """
         result = []
         for column in self._columns:
@@ -79,12 +88,15 @@ class SquareBoard:
     def as_code(self):
         """
         Devuelve el BoardCode de la posición actual.
+        :return: BoardCode
         """
         return BoardCode(self)
 
     def is_victory(self, char):
         """
         True si char tiene una racha ganadora en cualquiera de las 4 direcciones posibles.
+        :param char: Ficha del personaje que se comprueba
+        :return: bool
         """
         return (self._any_vertical_victory(char) or
                 self._any_descending_diagonal(char) or
@@ -94,6 +106,8 @@ class SquareBoard:
     def _any_vertical_victory(self, char):
         """
         Pregunta a cada columna si tiene racha.
+        :param char: Ficha del personaje que se comprueba
+        :return: bool
         """
         result = False
         for linear_board in self._columns:
@@ -103,6 +117,8 @@ class SquareBoard:
     def _any_horizontal_victory(self, char):
         """
         Crea un tablero transpuesto y le pregunta por victorias verticales (H -> V).
+        :param char: Ficha del personaje que se comprueba
+        :return: bool
         """
         #result = True
         transpose_matrix = transpose(self.as_matrix())
@@ -114,6 +130,8 @@ class SquareBoard:
     def _any_descending_diagonal(self, char):
         """
         Desplaza filas (displace_matrix) y pregunta por victoria horizontal (Dv -> H -> V)
+        :param char: Ficha del personaje que se comprueba
+        :return: bool
         """
         matrix = self.as_matrix()
         dm = displace_matrix(matrix)
@@ -124,6 +142,8 @@ class SquareBoard:
         """
         Invierte cada columna, con lo que las diagonales ascendentes se
         convierten en descendentes, y pregunta por diagonal descendente (D^ -> Dv -> H -> V)
+        :param char: Ficha del personaje que se comprueba
+        :return: bool
         """
         matrix = self.as_matrix()
         rm = reverse_matrix(matrix)
