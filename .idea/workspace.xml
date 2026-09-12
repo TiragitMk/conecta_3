@@ -5,19 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e210c430-1faf-41c2-96a2-3872248e3e3d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/tests/list_utils_test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/conecta-4@1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/conecta-4@1.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cuestionario_conecta4.docx" beforeDir="false" afterPath="$PROJECT_DIR$/cuestionario_conecta4.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/conecta_4/game.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/conecta_4/game.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/conecta_4/linear_board.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/conecta_4/linear_board.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/conecta_4/list_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/conecta_4/list_utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/conecta_4/match.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/conecta_4/match.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/conecta_4/oracle.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/conecta_4/oracle.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/conecta_4/player.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/conecta_4/player.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/conecta_4/square_board.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/conecta_4/square_board.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/list_utils_tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/linear_board_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/linear_board_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/list_utils_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/list_utils_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/oracle_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/oracle_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/square_board_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/square_board_test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,6 +113,8 @@
       <workItem from="1789057189013" duration="61000" />
       <workItem from="1789057610295" duration="8735000" />
       <workItem from="1789068141957" duration="119000" />
+      <workItem from="1789124393395" duration="4623000" />
+      <workItem from="1789208108148" duration="5231000" />
     </task>
     <servers />
   </component>

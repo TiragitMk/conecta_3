@@ -5,9 +5,29 @@ def test_empty_board():
 
     board = SquareBoard()
 
+    assert len(board) == BOARD_LENGTH
+    for column in board._columns:
+        assert isinstance(column, LinearBoard)
+    assert board._columns[0] is not board._columns[1]
     assert board.is_full() == False
     assert board.is_victory('o') == False
     assert board.is_victory ('x') == False
+
+def test_from_list_as_matrix():
+    matrix = [['x', None, None, None], ['o', 'x', None, None], [None] * 4, [None] * 4]
+    board = SquareBoard.from_list(matrix)
+    assert board.as_matrix() == matrix
+
+def test_from_board_code():
+    original = SquareBoard.from_str_board('xo..|o...|x...|....')
+    rebuilt = SquareBoard.from_board_code(original.as_code())
+    assert isinstance(rebuilt, SquareBoard)
+    assert rebuilt == original
+    assert rebuilt is not original
+    assert rebuilt.as_matrix()[0] is not original.as_matrix()[0]
+    rebuilt.add('x', 3)
+    assert rebuilt != original
+    assert SquareBoard.from_board_code(SquareBoard().as_code()) == SquareBoard()
 
 def test_horizontal_victory():
     horizontal = SquareBoard.from_list([['x', None, None, None, None, None, ],

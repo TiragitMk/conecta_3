@@ -58,7 +58,7 @@ class BaseOracle:
             classification = ColumnClassification.FULL
         return ColumnRecommendations(i, classification)
 
-    #Para Learning Oracle. Tenemos que clasificar entre buena o mal
+    # Para Learning Oracle. Hay que clasificar entre buena o mala.
     def full_or_win(self, board, player):
         """
         True si en esta posición NO queda ninguna opción buena posible, es decir, si la jugada estaba forzada.
@@ -194,13 +194,13 @@ class LearningOracle(MemoizationOracle):
         :param move: Move
         :return: None
         """
-        #Crear la clave
+        # Se crea la clave.
         key = self._make_key(move.board_code, move.player)
-        #Reclasificamos
+        # Se reclasifica.
         recomendaciones = self._get_recommendation(
             SquareBoard.from_board_code(move.board_code), move.player)
         recomendaciones[move.position] = ColumnRecommendations(move.position, ColumnClassification.BAD)
-        #Sustituimos en nuestro dict la recomendación
+        # Se sustituye en la caché la recomendación.
         self.memo_recommendations[key] = recomendaciones
 
     def back_track(self, list_of_moves):

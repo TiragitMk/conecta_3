@@ -3,7 +3,7 @@ import pytest
 from conecta_4.settings import BOARD_LENGTH
 from conecta_4.oracle import *
 from conecta_4.square_board import SquareBoard
-from conecta_4.player import Player
+from conecta_4.player import *
 
 
 def test_base_oracle():
@@ -63,4 +63,22 @@ def test_is_winning_move():
 
     assert oracle._is_winning_bet(almost, 2, winner)
 
+# 1. La jugada guardada NO debe estar en el tablero guardado
+def test_move_guarda_el_tablero_previo():
+    p = Player('A', char='x', oracle=BaseOracle())
+    b = SquareBoard()
+    p.play(b)
+    mv = p.last_moves[0]
+    previo = SquareBoard.from_board_code(mv.board_code)
+    assert previo._columns[mv.position].get_columns()[0] is None
 
+# 2. Tras marcar BAD, esa columna deja de recomendarse
+def test_to_bad_cambia_la_recomendacion():
+    o = LearningOracle()
+    x = Player('x', char='x'); Player('o', char='o', opponent=x)
+    b = SquareBoard()
+    antes = o._get_recommendation(b, x)
+    mv = Move(2, b.as_code(), antes, x)
+    o.to_bad(mv)
+    despues = o._get_recommendation(b, x)
+    assert despues[2].classification == ColumnClassification.BAD
