@@ -1,12 +1,30 @@
-# Python-generated files
+# Bytecode y cachés de Python
 __pycache__/
-*.py[oc]
 *.py[cod]
-build/
-dist/
-wheels/
-*.egg-info
-.pytest_cache/
+*.py[oc]
+*$py.class
 
-# Virtual environments
-.venv
+# Entorno virtual
+.venv/
+venv/
+
+# Empaquetado
+dist/
+build/
+*.egg-info/
+wheels/
+
+# Herramientas
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Editor
+.idea/
+.vscode/
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
