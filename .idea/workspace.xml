@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e210c430-1faf-41c2-96a2-3872248e3e3d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cuestionario_conecta4.docx" beforeDir="false" afterPath="$PROJECT_DIR$/cuestionario_conecta4.docx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +111,8 @@
       <workItem from="1789068141957" duration="119000" />
       <workItem from="1789124393395" duration="4623000" />
       <workItem from="1789208108148" duration="5321000" />
-      <workItem from="1789249124527" duration="75000" />
+      <workItem from="1789249124527" duration="121000" />
+      <workItem from="1789293710736" duration="162000" />
     </task>
     <servers />
   </component>

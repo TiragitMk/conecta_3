@@ -1,7 +1,7 @@
 # Conecta 4 (o conecta 3)
 
 3 en raya en un tablero 4x4, con múltiples niveles de dificultad y oponentes que aprenden de las jugadas.
-Cuestionario y carpeta de tests en la raíz del repositorio.
+Cuestionario y carpeta de tests en la raíz del repositorio. Repositorio de Daniel Cabrera.
 
 ## Requisitos
 
